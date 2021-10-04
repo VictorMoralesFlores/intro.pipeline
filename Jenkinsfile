@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-    label 'jdk11.0.12'
-  }
+  agent any
   stages {
     stage('SayHello') {
       steps {
@@ -10,5 +8,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    MY_NAME = 'Mary'
   }
 }
