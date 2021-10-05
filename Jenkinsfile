@@ -45,4 +45,7 @@ pipeline {
     }
 
   }
+  environment {
+    OUTPUT_PATH = './temp'
+  }
 }
