@@ -16,13 +16,13 @@ pipeline {
       parallel {
         stage('a') {
           steps {
-            echo 'This is branch a'
+            echo 'Test en windows'
           }
         }
 
         stage('b') {
           steps {
-            echo 'This is branch b'
+            echo 'Test en linux'
             echo 'Paso de test:Integracion y calidad'
           }
         }
@@ -59,5 +59,19 @@ pipeline {
   }
   environment {
     OUTPUT_PATH = './temp'
+  }
+  post {
+    always {
+      echo 'El pipeline se ejecuto cool'
+    }
+
+    failure {
+      echo 'Ocurrio un error'
+    }
+
+    aborted {
+      echo 'No termino de correr el pipelie'
+    }
+
   }
 }
