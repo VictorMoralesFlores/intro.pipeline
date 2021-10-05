@@ -13,6 +13,15 @@ pipeline {
     }
 
     stage('test:integration y calidad') {
+      steps {
+        echo 'Paso de test:Integracion y calidad'
+        sh 'pwd'
+        sh 'chmod +x miscript.sh'
+        sh './miscript.sh'
+      }
+    }
+
+    stage('test:integration y calidad WinLinux') {
       parallel {
         stage('a') {
           steps {
@@ -23,7 +32,6 @@ pipeline {
         stage('b') {
           steps {
             echo 'Test en linux'
-            echo 'Paso de test:Integracion y calidad'
           }
         }
 
