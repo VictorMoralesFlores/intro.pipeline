@@ -25,14 +25,22 @@ pipeline {
     }
 
     stage('aprobacion') {
+      input {
+        message 'Presiona Ok para continuar'
+        submitter 'user1,user2'
+        parameters {
+          string(name: 'username', defaultValue: 'Vic', description: 'Nombre de usuario que esta dando el OK')
+        }
+      }
       steps {
-        echo 'Paso de aprobación'
+        echo 'Paso de aprobacion'
       }
     }
 
     stage('deploy:prod') {
       steps {
         echo 'Paso de deploy :prod'
+        echo "User: ${username} dijo que OK."
       }
     }
 
