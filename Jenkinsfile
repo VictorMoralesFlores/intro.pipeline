@@ -1,15 +1,40 @@
 pipeline {
   agent any
   stages {
-    stage('SayHello') {
+    stage('build') {
       steps {
-        echo 'Hello ${MY_NAME}!'
-        sh 'java -version'
+        echo 'Un paso sencillo de una linea'
+        sh '''
+        echo "Pasos multilinea"
+        cd /tmp
+        ls -lrt
+        '''
       }
     }
 
-  }
-  environment {
-    MY_NAME = 'Vic'
+    stage('test:integration y calidad') {
+      steps {
+        echo 'Paso de test:Integracion y calidad'
+      }
+    }
+
+    stage('test:funcional') {
+      steps {
+        echo 'Paso de test funcional'
+      }
+    }
+
+    stage('aprobacion') {
+      steps {
+        echo 'Paso de aprobación'
+      }
+    }
+
+    stage('deploy:prod') {
+      steps {
+        echo 'Paso de deploy :prod'
+      }
+    }
+
   }
 }
