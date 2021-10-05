@@ -13,7 +13,7 @@ add_a_user()
 
 ###
 # cuerpo principal del script comienza aqui 
-echo "comienzo del script............"
+echo "comienzo del script, tun, tun............"
 add_a_user bob sanchez Bob el constructor
 add_a_user alex badpassword Alex Pumas gol 
 add_a_user bilko peorpassword Bilko just an example
