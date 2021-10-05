@@ -13,8 +13,20 @@ pipeline {
     }
 
     stage('test:integration y calidad') {
-      steps {
-        echo 'Paso de test:Integracion y calidad'
+      parallel {
+        stage('a') {
+          steps {
+            echo 'This is branch a'
+          }
+        }
+
+        stage('b') {
+          steps {
+            echo 'This is branch b'
+            echo 'Paso de test:Integracion y calidad'
+          }
+        }
+
       }
     }
 
