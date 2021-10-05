@@ -1,6 +1,6 @@
 #!/bin/bash
 
-add_a_user
+function add_a_user
 {
     USER = $1
     PASSWORD = $2
@@ -14,8 +14,8 @@ add_a_user
 
 
 echo "Comienza el script"
-add_a_user bob sanchez Bob el constructor
-add_a_user alex badpassword Alex Pumas gol
-add_a_user bilko peorpassword Bilko just an example
+add_a_user "bob" "sanchez" "Bob el constructor"
+add_a_user "alex" "badpassword" "Alex Pumas gol"
+add_a_user "bilko" "peorpassword" "Bilko just an example"
 echo "Final del script..."
 echo "Paz y amor"
