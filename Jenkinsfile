@@ -31,6 +31,9 @@ pipeline {
     }
 
     stage('test:funcional') {
+      when {
+        branch 'test'
+      }
       steps {
         echo 'Paso de test funcional'
       }
@@ -67,6 +70,7 @@ pipeline {
 
     failure {
       echo 'Ocurrio un error'
+      mail(to: 'abc@test.com.mx', subject: 'Error en el pipeline del ejercicio del curso de docker.', body: 'Cuerpo del correo')
     }
 
     aborted {
